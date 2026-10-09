@@ -1,0 +1,4 @@
+# Pre-launch: keep search engines out until the owner decides to launch.
+# To launch, replace the two lines below with:  User-agent: *  /  Allow: /
+User-agent: *
+Disallow: /

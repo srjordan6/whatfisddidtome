@@ -1,0 +1,13 @@
+{
+  "name": "whatfisddidtome",
+  "compatibility_date": "2026-10-01",
+  // Static site only. No Worker code; Cloudflare serves ./public directly.
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "whatfisddidtome.com", "custom_domain": true }
+  ]
+}

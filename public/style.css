@@ -1,0 +1,71 @@
+:root{
+  --water:#e9f3f6;      /* page, cool pool-tile pale */
+  --deep:#0f3a59;       /* headings, rules */
+  --ink:#1b2a35;        /* body text */
+  --lane-red:#c3343b;   /* lane rope, key moments */
+  --lane-blue:#2b7db5;  /* lane rope, links */
+  --paper:#ffffff;      /* quoted documents */
+  --muted:#4f6575;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--water);color:var(--ink);
+  font-family:var(--serif);font-size:1.125rem;line-height:1.7;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--lane-blue);text-underline-offset:.18em}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--lane-red);outline-offset:3px}
+.wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem}
+
+/* Masthead: a lane rope runs across the top */
+.rope{height:10px;background:repeating-linear-gradient(90deg,var(--lane-red) 0 28px,#fff 28px 40px,var(--lane-blue) 40px 68px,#fff 68px 80px)}
+header.top{padding:3.5rem 0 2.5rem}
+.site{font-family:var(--cond);font-weight:600;font-size:1.05rem;letter-spacing:.02em;color:var(--muted);margin:0 0 2.5rem}
+h1{font-family:var(--cond);font-weight:700;color:var(--deep);font-size:clamp(2.4rem,7vw,4.1rem);line-height:1.02;letter-spacing:-.01em;margin:0 0 1.5rem;max-width:19ch}
+.lede{font-size:1.3rem;line-height:1.55;margin:0;max-width:42ch}
+
+nav.toc{border-top:2px solid var(--deep);border-bottom:2px solid var(--deep);padding:.9rem 0;margin:0 0 3rem}
+nav.toc ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.35rem 1.4rem;font-family:var(--cond);font-size:1.08rem}
+nav.toc a{color:var(--deep);text-decoration:none}
+nav.toc a:hover{text-decoration:underline}
+
+section{margin:0 0 3.75rem}
+h2{font-family:var(--cond);font-weight:700;color:var(--deep);font-size:2rem;line-height:1.1;margin:0 0 1rem}
+h3{font-family:var(--cond);font-weight:600;color:var(--deep);font-size:1.4rem;margin:2rem 0 .5rem}
+p{margin:0 0 1.1rem}
+.when{font-family:var(--cond);font-weight:600;color:var(--lane-red);font-size:1.15rem;font-variant-numeric:tabular-nums}
+
+/* Quoted documents look like documents */
+blockquote{margin:1.5rem 0;background:var(--paper);border-left:6px solid var(--lane-red);padding:1.1rem 1.3rem;font-size:1.08rem}
+blockquote p:last-child{margin-bottom:0}
+blockquote cite{display:block;font-style:normal;font-family:var(--cond);color:var(--muted);font-size:1rem;margin-top:.6rem}
+
+/* The two dates: the one bold moment on the page */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--deep);border:2px solid var(--deep);margin:1.75rem 0}
+.pair > div{background:var(--paper);padding:1rem 1.1rem}
+.pair .t{font-family:var(--cond);font-weight:700;font-size:2.1rem;color:var(--deep);line-height:1;font-variant-numeric:tabular-nums}
+.pair .d{font-size:1rem;margin-top:.45rem}
+.gap{font-family:var(--cond);font-weight:600;color:var(--lane-red);font-size:1.15rem;margin:-1rem 0 1.75rem}
+@media (max-width:520px){.pair{grid-template-columns:1fr}}
+
+/* Timeline: a vertical lane rope */
+ol.lane{list-style:none;margin:1.5rem 0 0;padding:0 0 0 2rem;position:relative}
+ol.lane::before{content:"";position:absolute;left:.45rem;top:.4rem;bottom:.4rem;width:6px;border-radius:3px;
+  background:repeating-linear-gradient(180deg,var(--lane-red) 0 22px,#fff 22px 30px,var(--lane-blue) 30px 52px,#fff 52px 60px)}
+ol.lane li{position:relative;margin:0 0 1.15rem;font-size:1.04rem}
+ol.lane li::before{content:"";position:absolute;left:-1.82rem;top:.62rem;width:12px;height:12px;border-radius:50%;background:var(--paper);border:3px solid var(--deep)}
+ol.lane li.key::before{background:var(--lane-red);border-color:var(--lane-red)}
+ol.lane .when{display:block;font-size:1.05rem}
+
+table{width:100%;border-collapse:collapse;font-size:1rem;margin:1rem 0 1.5rem;background:var(--paper)}
+th,td{text-align:left;vertical-align:top;padding:.6rem .7rem;border-bottom:1px solid #c9dbe4}
+th{font-family:var(--cond);font-weight:600;color:var(--deep);font-size:1.05rem}
+.scroll{overflow-x:auto}
+
+.note{font-size:1rem;color:var(--muted)}
+footer{border-top:2px solid var(--deep);padding:1.5rem 0 3rem;font-size:1rem;color:var(--muted)}
