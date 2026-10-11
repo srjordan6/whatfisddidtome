@@ -18,8 +18,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 /* ---------- Hero ---------- */
 .hero{position:relative;background:var(--navy);color:#eef1ef;overflow:hidden;
   padding:calc(env(safe-area-inset-top,0px) + 2rem) 6vw 4.5rem}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;
-  background:repeating-linear-gradient(90deg,var(--red) 0 28px,#fff 28px 40px,#2b7db5 40px 68px,#fff 68px 80px)}
+.hero::after{content:"";position:absolute;left:6vw;right:6vw;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,#a9d8df66 18%,#a9d8df66 82%,transparent)}
 .mast{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;color:#9fb2b8}
 .mast a{color:#cfdadc;text-decoration:none}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:4vw;align-items:center;max-width:78rem;margin:3.5rem auto 0}
@@ -55,7 +55,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 @media (prefers-reduced-motion:reduce){.js .sheet.under{filter:none;opacity:1;transform:rotateX(18deg) rotateZ(-4deg)}.sheet{transition:none}}
 
 /* ---------- Status strip ---------- */
-.status{background:#dfe6e3;padding:.95rem 6vw;font-size:.95rem;display:flex;gap:1.2rem;flex-wrap:wrap;align-items:baseline}
+.status{background:var(--paper);border-bottom:1px solid var(--rule);padding:.95rem 6vw;font-size:.95rem;display:flex;gap:1.2rem;flex-wrap:wrap;align-items:baseline}
 .status b{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--navy)}
 
 /* ---------- Layout: date rail, column, contents ---------- */
@@ -107,8 +107,7 @@ blockquote.in mark,.no-js blockquote mark{background-size:100% 2px}
 
 /* timeline */
 ol.lane{list-style:none;margin:1.4rem 0 0;padding:0 0 0 2rem;position:relative}
-ol.lane::before{content:"";position:absolute;left:.45rem;top:.4rem;bottom:.4rem;width:6px;border-radius:3px;
-  background:repeating-linear-gradient(180deg,var(--red) 0 22px,#fff 22px 30px,#2b7db5 30px 52px,#fff 52px 60px)}
+ol.lane::before{content:"";position:absolute;left:.62rem;top:.5rem;bottom:.5rem;width:2px;background:var(--rule)}
 ol.lane li{position:relative;margin:0 0 1.1rem;font-size:1rem}
 ol.lane li::before{content:"";position:absolute;left:-1.82rem;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--card);border:3px solid var(--navy)}
 ol.lane li.key::before{background:var(--red);border-color:var(--red)}
